@@ -57,7 +57,6 @@ Folder-based routing maps directories directly to URLs:
 ```
 
 /
-├─ index.html          → Root landing (optional)
 ├─ _redirects          → Cloudflare Pages routing rules
 │
 ├─ assets/             → Shared icons and images
