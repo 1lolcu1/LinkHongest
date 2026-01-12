@@ -5,8 +5,8 @@
 <h2 align="center"><b>LinkHongest</b></h2>
 
 <h4 align="center">
-A cinematic, animated personal link hub<br>
-built for speed, style, and simplicity.
+A lightweight, static multi-link hub<br>
+built for clarity, control, and zero backend complexity.
 </h4>
 
 ---
@@ -15,7 +15,7 @@ built for speed, style, and simplicity.
   <a href="#overview">Overview</a> •
   <a href="#features">Features</a> •
   <a href="#structure">Project Structure</a> •
-  <a href="#links">Official Links</a> •
+  <a href="#routing">Routing Logic</a> •
   <a href="#tech">Tech Stack</a> •
   <a href="#setup">Setup</a> •
   <a href="#deployment">Deployment</a> •
@@ -24,37 +24,150 @@ built for speed, style, and simplicity.
 
 ---
 
-<a name="overview"></a>
 ## Overview
 
-**LinkHongest** is a fully static, front-end–only link hub designed as a modern alternative to traditional “link in bio” services.
+**LinkHongest** is a fully static website designed to route a single domain to multiple destinations.
 
-The goal is simple:
-- One domain
-- Multiple destinations
-- Zero backend complexity
+It supports:
+- Root-level redirects (e.g. Discord)
+- Multiple subpaths serving independent pages
+- Zero backend, zero database, zero runtime dependencies
 
-The root domain can redirect externally (e.g. Discord), while subpaths serve dedicated pages.
+Everything is handled via static files and server-side routing.
 
 ---
 
-<a name="features"></a>
 ## Features
 
-- ✉️ Interactive intro animation (mail opening)
-- 🎥 Fullscreen cinematic background video
-- 🎵 User-controlled background music
-- 🧊 Glassmorphism UI design
-- ✨ Metallic hover & shimmer effects
-- 🖱️ Custom cursor with motion trail
-- 📱 Fully responsive (desktop & mobile)
-- ⚡ Pure static hosting
+- 📌 Multiple destinations under one domain
+- 🔀 Root-level redirect support
+- 📁 Folder-based URL routing
+- 🎥 Video & audio support
+- 🎨 Custom fonts and assets
+- 📱 Responsive layouts
+- ⚡ CDN-powered performance
 - 🔒 No cookies, no analytics, no tracking
 
 ---
 
-<a name="structure"></a>
 ## Project Structure
 
-This repository is structured for clean URL routing:
+Folder-based routing maps directories directly to URLs:
 
+```
+
+/
+├─ index.html          → Root landing (optional)
+├─ _redirects          → Cloudflare Pages routing rules
+│
+├─ assets/             → Shared icons and images
+│
+├─ kkaan.gull/
+│  ├─ index.html       → /kkaan.gull
+│  ├─ video.mp4
+│  ├─ ses.mp3
+│  ├─ profil.jpg
+│  └─ herseyfont.otf
+│
+└─ guns/
+├─ index.html       → /guns
+├─ video.mp4
+├─ ses.mp3
+├─ profil.png
+└─ herseyfont.otf
+
+```
+
+Each folder maps directly to its URL path.
+
+---
+
+## Routing Logic
+
+Routing is handled **server-side** using Cloudflare Pages.
+
+Example `_redirects` rule:
+
+```
+
+/ [https://discord.gg/2xSPvuyKWg](https://discord.gg/2xSPvuyKWg) 302
+
+```
+
+This means:
+- `/` → Discord
+- `/kkaan.gull` → `kkaan.gull/index.html`
+- `/guns` → `guns/index.html`
+
+No client-side JavaScript redirects are required.
+
+---
+
+## Tech Stack
+
+Built with **pure web technologies** only:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Static media assets (MP4, MP3, PNG, OTF)
+
+No frameworks  
+No libraries  
+No build tools  
+
+---
+
+## Setup
+
+1. Clone or download the repository
+2. Keep the folder structure unchanged
+3. Edit content inside:
+   - `index.html`
+   - `kkaan.gull/index.html`
+   - `guns/index.html`
+4. Replace assets as needed (images, video, audio)
+
+No installation or configuration required.
+
+---
+
+## Deployment
+
+LinkHongest can be deployed on any static hosting provider.
+
+Recommended:
+- **Cloudflare Pages**
+
+Also compatible with:
+- GitHub Pages
+- Netlify
+- Any static web host
+
+Requirements:
+- Static file hosting only
+
+You do **NOT** need:
+- PHP
+- SQL / MySQL
+- Node.js
+- Docker
+
+---
+
+## License
+
+This project is intended for **personal and internal use**.
+
+You are free to:
+- Modify the source
+- Change routing and content
+- Deploy under your own domain
+
+No warranty is provided.
+
+---
+
+<p align="center">
+  LinkHongest • Part of the Hongest ecosystem
+</p>
