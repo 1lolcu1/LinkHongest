@@ -80,6 +80,7 @@ Folder-based routing maps directories directly to URLs:
 │  ├─ ses.mp3
 │  ├─ profil.png
 │  └─ herseyfont.otf
+└─
 
 ```
 
