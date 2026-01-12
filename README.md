@@ -60,7 +60,12 @@ Folder-based routing maps directories directly to URLs:
 ├─ _redirects          → Cloudflare Pages routing rules
 │
 ├─ assets/             → Shared icons and images
-│
+│  ├─ 1.png
+│  ├─ 2.png
+│  ├─ 3.png
+│  ├─ 4.png
+│  ├─ 5.png
+│  └─ logo.png
 ├─ kkaan.gull/
 │  ├─ index.html       → /kkaan.gull
 │  ├─ video.mp4
@@ -69,11 +74,11 @@ Folder-based routing maps directories directly to URLs:
 │  └─ herseyfont.otf
 │
 └─ guns/
-├─ index.html       → /guns
-├─ video.mp4
-├─ ses.mp3
-├─ profil.png
-└─ herseyfont.otf
+│  ├─ index.html       → /guns
+│  ├─ video.mp4
+│  ├─ ses.mp3
+│  ├─ profil.png
+│  └─ herseyfont.otf
 
 ```
 
