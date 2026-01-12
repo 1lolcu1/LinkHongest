@@ -66,6 +66,7 @@ Folder-based routing maps directories directly to URLs:
 │  ├─ 4.png
 │  ├─ 5.png
 │  └─ logo.png
+│
 ├─ kkaan.gull/
 │  ├─ index.html       → /kkaan.gull
 │  ├─ video.mp4
