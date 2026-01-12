@@ -108,7 +108,6 @@ LinkHongest works perfectly on any **static hosting** provider:
 - Any basic static web hosting
 
 You do **NOT** need:
-- VDS / VPS
 - PHP
 - SQL / MySQL
 - Docker
